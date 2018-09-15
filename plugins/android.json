@@ -13,9 +13,6 @@
     "cordova-plugin-camera": {
       "PACKAGE_NAME": "com.camera.apps"
     },
-    "cordova-plugin-media-capture": {
-      "PACKAGE_NAME": "com.camera.apps"
-    },
     "cordova-plugin-device": {
       "PACKAGE_NAME": "com.camera.apps"
     },
@@ -31,10 +28,16 @@
     "cordova-plugin-inappbrowser": {
       "PACKAGE_NAME": "com.camera.apps"
     },
+    "cordova-plugin-media-capture": {
+      "PACKAGE_NAME": "com.camera.apps"
+    },
     "cordova-plugin-network-information": {
       "PACKAGE_NAME": "com.camera.apps"
     },
     "cordova-plugin-vibration": {
+      "PACKAGE_NAME": "com.camera.apps"
+    },
+    "cordova-plugin-barcodescanner": {
       "PACKAGE_NAME": "com.camera.apps"
     }
   },
