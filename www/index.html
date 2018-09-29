@@ -33,27 +33,30 @@
      <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">
 		
-		document.addEventListener("deviceready",onDeviceReady,false);		
-		
+		document.addEventListener("deviceready",onDeviceReady,false);	
+		document.getElementById("uploadFile").addEventListener("click", uploadFile);
+		document.getElementById("downloadFile").addEventListener("click", downloadFile);	
+
 
 		function onDeviceReady(){
-		alert('Device Ready');	
+			alert('Device Ready');
+				
 		cordova.plugins.barcodeScanner.scan(
-      function (result) {
-          alert("We got a barcode\n" +
-                "Result: " + result.text + "\n" +
-                "Format: " + result.format + "\n" +
-                "Cancelled: " + result.cancelled);
-      },
-      function (error) {
-          alert("Scanning failed: " + error);
-      }
-   );
+			      function (result) {
+			          alert("We got a barcode\n" +
+			                "Result: " + result.text + "\n" +
+			                "Format: " + result.format + "\n" +
+			                "Cancelled: " + result.cancelled);
+			      },
+			      function (error) {
+			          alert("Scanning failed: " + error);
+			      }
+   			);
 			
 		}
 		
 		function cameraTakePicture() { 
-		alert('baal');
+		//alert('baal');
 	
 					   navigator.camera.getPicture(onSuccess, onFail, {  
 						  quality: 50, 
@@ -70,7 +73,31 @@
 						  alert('Failed because: ' + message); 
 					   } 
 					
-					}
+			}
+
+		function downloadFile() {
+		   var fileTransfer = new FileTransfer();
+		   var uri = encodeURI("http://s14.postimg.org/i8qvaxyup/bitcoin1.jpg");
+		   var fileURL =  "///storage/emulated/0/DCIM/myFile";
+
+		   fileTransfer.download(
+		      uri, fileURL, function(entry) {
+		         console.log("download complete: " + entry.toURL());
+		      },
+				
+		      function(error) {
+		         console.log("download error source " + error.source);
+		         console.log("download error target " + error.target);
+		         console.log("download error code" + error.code);
+		      },
+				
+		      false, {
+		         headers: {
+		            "Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
+		         }
+		      }
+		   );
+		}
 		
     </script>
 </head>
@@ -81,7 +108,9 @@
 	<h1>PhoneGamera</h1>
 	<div class="app">
 	<button id = "cameraTakePicture" onclick="cameraTakePicture()">TAKE PICTURE</button>
-<img id = "myImage"></img>
+	<button id = "uploadFile">UPLOAD</button>
+	<button id = "downloadFile">DOWNLOAD</button>
+	<img id = "myImage"></img>
     </div>
         
     
