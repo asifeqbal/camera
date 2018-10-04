@@ -41,11 +41,11 @@
 		function onDeviceReady(){
 			alert('Device Ready');
 
-		//downloadFile();
-				
-		
+		//downloadFile();		
 			
-		}
+			}
+			
+			//Camera Plugin code//
 		
 		function cameraTakePicture() { 
 		//alert('baal');
@@ -65,7 +65,9 @@
 						  alert('Failed because: ' + message); 
 					   }					
 			}
-
+			
+				//barcodeScanner Plugin code//
+				
 		function barcodeScanner() {
 				cordova.plugins.barcodeScanner.scan(
 					      function (result) {
@@ -92,6 +94,9 @@
 					      }
 		   			);
 		}
+		
+		//File plugin downloadFile & uploadFile code//
+		
 		function downloadFile() {
 		   var fileTransfer = new FileTransfer();
 		   var uri = encodeURI("http://typo3.vrisini.com/fabdyl/fileadmin/user_upload/tempbill/3_305_bill.pdf");
@@ -99,6 +104,7 @@
 
 		   fileTransfer.download(
 		      uri, fileURL, function(entry) {
+			  alert('downloade');
 		         console.log("download complete: " + entry.toURL());
 		      },
 				
