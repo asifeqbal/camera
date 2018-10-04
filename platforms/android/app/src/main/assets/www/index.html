@@ -97,65 +97,68 @@
 		
 		//File plugin downloadFile & uploadFile code//
 		
-		<!-- function downloadFile() { -->
-		   <!-- var fileTransfer = new FileTransfer(); -->
-		   <!-- var uri = encodeURI("http://typo3.vrisini.com/fabdyl/fileadmin/user_upload/tempbill/3_305_bill.pdf"); -->
-		   <!-- var fileURL =  "///storage/emulated/0/DCIM/myFile"; -->
-
-		   <!-- fileTransfer.download( -->
-		      <!-- uri, fileURL, function(entry) { -->
-			  <!-- alert('downloade'); -->
-		         <!-- console.log("download complete: " + entry.toURL()); -->
-		      <!-- }, -->
-				
-		      <!-- function(error) { -->
-		         <!-- console.log("download error source " + error.source); -->
-		         <!-- console.log("download error target " + error.target); -->
-		         <!-- console.log("download error code" + error.code); -->
-		      <!-- }, -->
-				
-		      <!-- false, { -->
-		         <!-- headers: { -->
-		            <!-- "Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA==" -->
-		         <!-- } -->
-		      <!-- } -->
-		   <!-- ); -->
-		<!-- } -->
-		// JUST some code!! do not work in codepen, but work with XDK
 		function downloadFile() {
-		alert('hello');
-		<!-- alert('file:' + cordova.file.dataDirectory +); -->
-				var fileURL = cordova.file.dataDirectory + 'file.gif';
-				var uri = encodeURI("http://typo3.vrisini.com/fabdyl/fileadmin/user_upload/tempbill/3_305_bill.pdf");
+		alert('baal');
+		   var fileTransfer = new FileTransfer();
+		   var uri = encodeURI("http://typo3.vrisini.com/fabdyl/fileadmin/user_upload/tempbill/3_305_bill.pdf");
+		   var fileURL =  "///storage/emulated/0/DCIM/myFile";
 
-				var fileTransfer = new FileTransfer();
+		   fileTransfer.download(
+		   alert('baal hai');
+		      uri, fileURL, function(entry) {
+			  alert('downloade');
+		         console.log("download complete: " + entry.toURL());
+		      },
+				
+		      function(error) {
+			  alert('bada baal');
+		         console.log("download error source " + error.source);
+		         console.log("download error target " + error.target);
+		         console.log("download error code" + error.code);
+		      },
+				
+		      false, {
+		         headers: {
+		            "Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
+		         }
+		      }
+		   );
+		}
+		// JUST some code!! do not work in codepen, but work with XDK
+		<!-- function downloadFile() { -->
+		<!-- alert('hello'); -->
+		<!-- <!-- alert('file:' + cordova.file.dataDirectory +); --> -->
+				<!-- var fileURL = cordova.file.dataDirectory + 'file.gif'; -->
+				<!-- var uri = encodeURI("http://typo3.vrisini.com/fabdyl/fileadmin/user_upload/tempbill/3_305_bill.pdf"); -->
 
-				fileTransfer.download(
-					uri,
-					fileURL,
-					function(entry) {
-						console.log("download complete: " + entry.toURL());
-						alert("download complete: " + entry.toURL());
-					},
-					function(error) {
-						console.log("download error source " + error.source);
-						console.log("download error target " + error.target);
+				<!-- var fileTransfer = new FileTransfer(); -->
+
+				<!-- fileTransfer.download( -->
+					<!-- uri, -->
+					<!-- fileURL, -->
+					<!-- function(entry) { -->
+						<!-- console.log("download complete: " + entry.toURL()); -->
+						<!-- alert("download complete: " + entry.toURL()); -->
+					<!-- }, -->
+					<!-- function(error) { -->
+						<!-- console.log("download error source " + error.source); -->
+						<!-- console.log("download error target " + error.target); -->
 					  
-						// 1 = FileTransferError.FILE_NOT_FOUND_ERR
-						// 2 = FileTransferError.INVALID_URL_ERR
-						// 3 = FileTransferError.CONNECTION_ERR
-						// 4 = FileTransferError.ABORT_ERR
-						// 5 = FileTransferError.NOT_MODIFIED_ERR
-						console.log("upload error code " + error.code);
-					},
-					false,
-					{
-						headers: {
-							// add custom headers if needed
-						}
-					}
-				);
-	}	
+						<!-- // 1 = FileTransferError.FILE_NOT_FOUND_ERR -->
+						<!-- // 2 = FileTransferError.INVALID_URL_ERR -->
+						<!-- // 3 = FileTransferError.CONNECTION_ERR -->
+						<!-- // 4 = FileTransferError.ABORT_ERR -->
+						<!-- // 5 = FileTransferError.NOT_MODIFIED_ERR -->
+						<!-- console.log("upload error code " + error.code); -->
+					<!-- }, -->
+					<!-- false, -->
+					<!-- { -->
+						<!-- headers: { -->
+							<!-- // add custom headers if needed -->
+						<!-- } -->
+					<!-- } -->
+				<!-- ); -->
+	<!-- }	 -->
     </script>
 </head>
 
