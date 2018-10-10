@@ -100,7 +100,5 @@
     <platform name="android">
         <allow-intent href="market:*" />
     </platform>
-    
     <plugin name="cordova-plugin-barcodescanner" spec="~0.7.4" />
-    <plugin name="cordova-plugin-file-transfer" spec="~1.7.1" />
 </widget>
