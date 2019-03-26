@@ -63,15 +63,26 @@
 					   function onFail(message) { 
 						  alert('Failed because: ' + message); 
 					   }					
-			}
-			
-				//barcodeScanner Plugin code//
 				
-		
-		//File plugin downloadFile & uploadFile code//
-		
-	
-		// JUST some code!! do not work in codepen, but work with XDK
+				}
+
+				function cameraGetPicture() {
+					   navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+					      destinationType: Camera.DestinationType.DATA_URL,
+					      sourceType: Camera.PictureSourceType.PHOTOLIBRARY
+					   });
+
+					   function onSuccess(imageURL) {
+					      var image = document.getElementById('myImage');
+					      image.src = imageURL;
+					   }
+
+					   function onFail(message) {
+					      alert('Failed because: ' + message);
+					   }
+
+					}
+			
 		
     </script>
 </head>
@@ -79,9 +90,10 @@
 <body>
 	
 	
-	<h1>PhoneGamera</h1>
+	<h1>Cordova App</h1>
 	<div class="app">
 	<button id = "cameraTakePicture" onclick="cameraTakePicture()">TAKE PICTURE</button>
+	<button id = "cameraGetPicture">GET PICTURE</button>
 	
 	<img id = "myImage"></img>
     </div>
